@@ -1,0 +1,1 @@
+/home/mihai/.i3
