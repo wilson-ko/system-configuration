@@ -19,10 +19,15 @@ TEXT
     "full_text": ${if_up wlp2s0}
                    "  ${wireless_essid wlp2s0} [${wireless_link_qual_perc wlp2s0}%] "
                  ${else}
-                   "  No connection "
+                   ${if_existing /proc/net/route eth0}
+                     " ↑ [${addr eth0}] "
+                   ${else}
+                     " No Connection "
+                   ${endif}
                  ${endif},
-    "color": ${if_up wlp2s0}"\#a0a0a0"${else}"\#ffb038"${endif}
+    "color" : ${if_up wlp2s0}"\#a0a0a0"${else}"\#ffb038"${endif}
   },
+
   {
     "full_text": ${if_match ${battery_percent BAT0} > 90}
                    "  ${battery_percent BAT0}% "
