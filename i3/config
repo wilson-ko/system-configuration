@@ -28,24 +28,12 @@ bindsym XF86MonBrightnessUp exec ~/scripts/backlight_inc
 bindsym XF86MonBrightnessDown exec ~/scripts/backlight_dec
 
 # Change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -86,6 +74,16 @@ set $ws8 "doc"
 set $ws9 "term"
 set $ws0 "other"
 
+# Change keyboard layout
+set $keyboard_layout "keyboard: r=ro, u=us"
+bindsym $mod+Shift+k mode $keyboard_layout
+mode $keyboard_layout {
+  bindsym r exec "setxkbmap ro std", mode "default"
+  bindsym u exec "setxkbmap us",     mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -114,9 +112,11 @@ bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Up move workspace to output up
 bindsym $mod+Control+Down move workspace to output down
 bindsym $mod+Control+Right move workspace to output right
+
 # Move application to workspace
 assign [class="Skype"] $ws3
 assign [class="google-chrome"] $ws2
+assign [class="chromium"] $ws2
 assign [class="Opera"] $ws2
 assign [class="Gvim"] $ws1
 assign [class="Thunderbird"] $ws4
