@@ -71,9 +71,5 @@ TEXT
   {
     "full_text": "  ${time %a %d/%m %R}",
     "color": "\#a0a0a0"
-  },
-  {
-    "full_text": "  ${exec setxkbmap -v 7 | grep layout | awk '{print toupper($2)}'}",
-    "color": "\#a0a0a0"
   }
 ]
