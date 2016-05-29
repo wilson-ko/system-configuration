@@ -38,8 +38,6 @@ let g:ycm_global_ycm_extra_conf ="~/.ycm_extra_conf.py" " Specifies the path to 
 let &t_SI="\<Esc>[2 q"                                  " Sets the cursor style (when entering the insert mode)
 let &t_EI="\<Esc>[2 q"                                  " Sets the cursor style (when leaving the insert mode)
 
-hi vertsplit ctermfg=8 ctermbg=8
-
 colorscheme badwolf                                     " Sets the color scheme
 filetype on                                             " Automatically detects file type
 syntax enable                                           " Enables syntax highlighting
@@ -57,3 +55,5 @@ set colorcolumn =120    " Displays a colored ruler at a given column
 set relativenumber      " Displays relative line numbers on the left side
 set hlsearch            " Turns search highlight on
 set mouse       =a      " Turns mouse cursor on
+
+hi vertsplit ctermfg=8 ctermbg=8
