@@ -23,9 +23,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec dmenu_run -fn 'DejaVu Sans Book-8'
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans Book-8'"
 
-# Backlight control
-bindsym XF86MonBrightnessUp exec ~/scripts/backlight_inc
-bindsym XF86MonBrightnessDown exec ~/scripts/backlight_dec
+# Screen brightness control
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Change focus
 bindsym $mod+Left focus left
