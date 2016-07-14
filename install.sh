@@ -23,7 +23,7 @@ function install {
 	process_configuration "$(pwd)/i3" "${HOME}/.i3"
 
 	# Add symlinks to Vim configuration.
-	process_configuration "$(pwd)/vimrc" "${HOME}/.vimrc"
+	#process_configuration "$(pwd)/vimrc" "${HOME}/.vimrc"
 }
 
 install
