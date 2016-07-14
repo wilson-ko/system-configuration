@@ -1,0 +1,4 @@
+#!/bin/bash
+source "/opt/ros/indigo/setup.sh"
+source "$HOME/dev/delft-robotics/devel/setup.sh"
+catkin_make -C "$HOME/dev/delft-robotics" -DPYTHON_EXECUTABLE=/usr/bin/python2 "$@"
