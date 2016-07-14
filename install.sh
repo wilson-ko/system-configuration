@@ -15,7 +15,7 @@ function process_configuration {
 	if [ -e "$2" ]; then
 		prompt_removal "$2"
 	fi
-	sudo ln -s "$1" "$2"
+	ln -s "$1" "$2"
 }
 
 function install {
