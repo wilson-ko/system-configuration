@@ -16,11 +16,11 @@ use_xft               yes
 TEXT
 ,[
   {
-    "full_text": ${if_up wlp2s0}
-                   "  ${wireless_essid wlp2s0} [${wireless_link_qual_perc wlp2s0}%] "
+    "full_text": ${if_existing /proc/net/route eth0}
+                   " ↑ [${addr eth0}] "
                  ${else}
-                   ${if_existing /proc/net/route eth0}
-                     " ↑ [${addr eth0}] "
+                   ${if_up wlp2s0}
+                     "  ${wireless_essid wlp2s0} [${wireless_link_qual_perc wlp2s0}%] "
                    ${else}
                      " No Connection "
                    ${endif}
